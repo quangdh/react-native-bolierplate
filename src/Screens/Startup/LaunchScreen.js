@@ -1,15 +1,22 @@
 import React, { Component } from "react";
-import { View } from "react-native";
-
+import { View, Text } from "react-native";
+import { withTranslation } from "react-i18next";
 // Styles
 import styles from "./Styles/LaunchScreenStyles";
 
-export default class LaunchScreen extends Component {
+class LaunchScreen extends Component {
   static navigationOptions = ({ screenProps }) => ({
     headerTitle: screenProps.t("app_name")
   });
 
   render() {
-    return <View style={styles.mainContainer} />;
+    const { t } = this.props;
+    return (
+      <View style={[styles.mainContainer, styles.fillCenter]}>
+        <Text>{t("app_name")}</Text>
+      </View>
+    );
   }
 }
+
+export default withTranslation()(LaunchScreen);
