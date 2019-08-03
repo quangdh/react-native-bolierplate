@@ -5,5 +5,5 @@ export default {
   reduxLogging: __DEV__,
   includeExamples: __DEV__,
   useReactotron: false,
-  useCodePush: true
+  useCodePush: false
 };
