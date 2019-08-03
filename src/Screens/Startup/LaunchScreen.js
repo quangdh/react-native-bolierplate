@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View } from "react-native";
-import { Images } from "../Themes";
+
 // Styles
 import styles from "./Styles/LaunchScreenStyles";
 
