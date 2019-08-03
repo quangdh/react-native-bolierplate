@@ -1,4 +1,4 @@
-export default (kelvin: number) => {
+export function ConvertFromKelvin(kelvin: number) => {
   const celsius = kelvin - 273.15
   const fahrenheit = (celsius * 1.8000) + 32
 
