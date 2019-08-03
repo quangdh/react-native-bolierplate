@@ -5,7 +5,7 @@ import DebugConfig from '../Config/DebugConfig'
 
 /* ------------- Types ------------- */
 
-import { StartupTypes } from '../Redux/StartupRedux'
+import { StartupTypes } from '../Redux/Startup/Actions'
 import { GithubTypes } from '../Redux/GithubRedux'
 
 /* ------------- Sagas ------------- */
