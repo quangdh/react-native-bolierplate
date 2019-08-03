@@ -1,0 +1,38 @@
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+
+import styles from './styles/{{screenNameCase name}}.styles.js';
+
+class {{screenNameCase name}} extends Component {
+  static navigationOptions = ({ screenProps }) => ({
+    header: null
+  });
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+  render() {
+    return (
+      <View>
+        <Text> {{screenNameCase name}} </Text>
+      </View>
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)({{screenNameCase name}});

@@ -5,7 +5,8 @@
   "scripts": {
     "start": "react-native start",
     "test": "jest",
-    "rename": "react-native-rename"
+    "rename": "react-native-rename",
+    "g": "plop"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
@@ -41,6 +42,7 @@
     "babel-plugin-ignite-ignore-reactotron": "^0.3.0",
     "jest": "^24.1.0",
     "metro-react-native-babel-preset": "^0.54.1",
+    "plop": "^2.4.0",
     "react-native-rename": "2.4.1",
     "react-test-renderer": "16.8.6",
     "reactotron-react-native": "^3.6.4",
