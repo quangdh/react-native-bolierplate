@@ -1,10 +1,10 @@
 import { moderateScale } from "react-native-size-matters";
 
 const type = {
-  base: 'Avenir-Book',
-  bold: 'Avenir-Black',
-  emphasis: 'HelveticaNeue-Italic'
-}
+  base: "Avenir-Book",
+  bold: "Avenir-Black",
+  emphasis: "HelveticaNeue-Italic"
+};
 
 const size = {
   h1: moderateScale(38),
@@ -18,7 +18,7 @@ const size = {
   medium: moderateScale(14),
   small: moderateScale(12),
   tiny: moderateScale(8.5)
-}
+};
 
 const style = {
   h1: {
@@ -26,7 +26,7 @@ const style = {
     fontSize: size.h1
   },
   h2: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: size.h2
   },
   h3: {
@@ -53,10 +53,10 @@ const style = {
     fontFamily: type.base,
     fontSize: size.medium
   }
-}
+};
 
 export default {
   type,
   size,
   style
-}
+};

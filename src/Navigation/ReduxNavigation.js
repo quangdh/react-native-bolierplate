@@ -1,52 +1,61 @@
-import * as React from 'react'
-import { BackHandler, Platform } from 'react-native'
+import * as React from "react";
+import { BackHandler, Platform } from "react-native";
 import {
   createReactNavigationReduxMiddleware,
   createReduxContainer
-} from 'react-navigation-redux-helpers'
-import { connect } from 'react-redux'
-import AppNavigation from './AppNavigation';
-import { withTranslation } from 'react-i18next';
+} from "react-navigation-redux-helpers";
+import { connect } from "react-redux";
+import AppNavigation from "./AppNavigation";
+import { withTranslation } from "react-i18next";
 
 export const appNavigatorMiddleware = createReactNavigationReduxMiddleware(
-  (state) => state.nav,
-  'root'
-)
+  state => state.nav,
+  "root"
+);
 
-const ReduxAppNavigator = createReduxContainer(AppNavigation, 'root')
+const ReduxAppNavigator = createReduxContainer(AppNavigation, "root");
 
 class ReduxNavigation extends React.Component {
-  componentDidMount () {
-    if (Platform.OS === 'ios') return
-    BackHandler.addEventListener('hardwareBackPress', () => {
-      const { dispatch, nav } = this.props
+  componentDidMount() {
+    if (Platform.OS === "ios") return;
+    BackHandler.addEventListener("hardwareBackPress", () => {
+      const { dispatch, nav } = this.props;
       // change to whatever is your first screen, otherwise unpredictable results may occur
-      if (nav.routes.length === 1 && (nav.routes[0].routeName === 'LaunchScreen')) {
-        return false
+      if (
+        nav.routes.length === 1 &&
+        nav.routes[0].routeName === "LaunchScreen"
+      ) {
+        return false;
       }
       // if (shouldCloseApp(nav)) return false
-      dispatch({ type: 'Navigation/BACK' })
-      return true
-    })
+      dispatch({ type: "Navigation/BACK" });
+      return true;
+    });
   }
 
-  componentWillUnmount () {
-    if (Platform.OS === 'ios') return
-    BackHandler.removeEventListener('hardwareBackPress', undefined)
+  componentWillUnmount() {
+    if (Platform.OS === "ios") return;
+    BackHandler.removeEventListener("hardwareBackPress", undefined);
   }
 
-  render () {
+  render() {
     const { t } = this.props;
-    return <ReduxAppNavigator screenProps={{ t }} dispatch={this.props.dispatch} state={this.props.nav} />
+    return (
+      <ReduxAppNavigator
+        screenProps={{ t }}
+        dispatch={this.props.dispatch}
+        state={this.props.nav}
+      />
+    );
   }
 }
 
-const ReloadAppOnLanguageChange = withTranslation('common', {
-  bindI18n: 'languageChanged',
-  bindStore: false,
+const ReloadAppOnLanguageChange = withTranslation("common", {
+  bindI18n: "languageChanged",
+  bindStore: false
 })(ReduxNavigation);
 
 const mapStateToProps = state => ({
   nav: state.nav
-})
-export default connect(mapStateToProps)(ReloadAppOnLanguageChange)
+});
+export default connect(mapStateToProps)(ReloadAppOnLanguageChange);

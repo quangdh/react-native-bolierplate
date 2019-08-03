@@ -5,7 +5,6 @@ import styles from "./Styles/NavigationStyles";
 import UnAuthStack from "./UnAuthStack";
 import AuthStack from "./AuthStack";
 
-
 // Manifest of possible screens
 const PrimaryNav = createSwitchNavigator(
   {
@@ -15,7 +14,7 @@ const PrimaryNav = createSwitchNavigator(
   },
   {
     // Default config for all screens
-    headerMode: 'none',
+    headerMode: "none",
     initialRouteName: "LaunchScreen",
     navigationOptions: {
       headerStyle: styles.header

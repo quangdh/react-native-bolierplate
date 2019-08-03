@@ -7,5 +7,5 @@ function formatPrice(number, prefix = "") {
 }
 
 export default {
-    formatPrice
-}
+  formatPrice
+};

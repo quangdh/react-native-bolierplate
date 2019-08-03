@@ -3,22 +3,22 @@ export default {
   getRoot: () => {
     return {
       ok: true,
-      data: require('../Data/Fixtures/root.json')
-    }
+      data: require("../Data/Fixtures/root.json")
+    };
   },
   getRate: () => {
     return {
       ok: true,
-      data: require('../Data/Fixtures/rateLimit.json')
-    }
+      data: require("../Data/Fixtures/rateLimit.json")
+    };
   },
-  getUser: (username) => {
+  getUser: username => {
     // This fixture only supports gantman or else returns skellock
-    const gantmanData = require('../Data/Fixtures/gantman.json')
-    const skellockData = require('../Data/Fixtures/skellock.json')
+    const gantmanData = require("../Data/Fixtures/gantman.json");
+    const skellockData = require("../Data/Fixtures/skellock.json");
     return {
       ok: true,
-      data: username.toLowerCase() === 'gantman' ? gantmanData : skellockData
-    }
+      data: username.toLowerCase() === "gantman" ? gantmanData : skellockData
+    };
   }
-}
+};
