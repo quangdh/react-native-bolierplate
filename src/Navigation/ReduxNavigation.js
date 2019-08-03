@@ -5,7 +5,8 @@ import {
   createReduxContainer
 } from 'react-navigation-redux-helpers'
 import { connect } from 'react-redux'
-import AppNavigation from './AppNavigation'
+import AppNavigation from './AppNavigation';
+import { withTranslation } from 'react-i18next';
 
 export const appNavigatorMiddleware = createReactNavigationReduxMiddleware(
   (state) => state.nav,
@@ -35,11 +36,17 @@ class ReduxNavigation extends React.Component {
   }
 
   render () {
-    return <ReduxAppNavigator dispatch={this.props.dispatch} state={this.props.nav} />
+    const { t } = this.props;
+    return <ReduxAppNavigator screenProps={{ t }} dispatch={this.props.dispatch} state={this.props.nav} />
   }
 }
+
+const ReloadAppOnLanguageChange = withTranslation('common', {
+  bindI18n: 'languageChanged',
+  bindStore: false,
+})(ReduxNavigation);
 
 const mapStateToProps = state => ({
   nav: state.nav
 })
-export default connect(mapStateToProps)(ReduxNavigation)
+export default connect(mapStateToProps)(ReloadAppOnLanguageChange)
