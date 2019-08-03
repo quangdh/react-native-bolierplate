@@ -1,7 +1,8 @@
 import { ScaledSheet } from "react-native-size-matters";
-import { Metrics } from "@assets";
+import { Metrics, Helpers } from "{{backRootPathCase name}}themes";
 
 export default (styles = ScaledSheet.create({
+    ...Helpers,
     container: {
         width: "100%"
     },

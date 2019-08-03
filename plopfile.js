@@ -32,7 +32,7 @@ const handlePath = (text, isScreen = false) => {
   if (R.length(parts) > 1) {
     let result = "";
     for (var i = 0; i < length - 1; i++) {
-      result += R.toLower(parts[i]) + "/";
+      result += parts[i] + "/";
     }
     return result + formatName(parts[length - 1], isScreen);
   } else {
@@ -56,6 +56,18 @@ const handleStyle = (text, isScreen = false) => {
   }
 };
 
+const handleBackRootCase = (text, isScreen = false) => {
+  let parts = R.split("/", text);
+  let length = R.length(parts);
+  let result = "../";
+  if (R.length(parts) > 1) {
+    for (var i = 0; i < length - 1; i++) {
+      result += "../";
+    }
+  }
+  return result + `../`;
+};
+
 const handleName = (text, isScreen = false) => {
   let parts = R.split("/", text);
   let length = R.length(parts);
@@ -72,7 +84,7 @@ const handleRawPath = text => {
   if (R.length(parts) > 1) {
     let result = "";
     for (var i = 0; i < length - 1; i++) {
-      result += R.toLower(parts[i]) + "/";
+      result += parts[i] + "/";
     }
     return result;
   } else {
@@ -90,6 +102,9 @@ module.exports = plop => {
   });
   plop.setHelper("stylePathCase", function(text) {
     return handleStyle(text, false);
+  });
+  plop.setHelper("backRootPathCase", function(text) {
+    return handleBackRootCase(text, false);
   });
   plop.setHelper("nameCase", function(text) {
     return handleName(text, false);
