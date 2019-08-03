@@ -1,8 +1,1 @@
-### Themes Folder
-Application specific themes
-* Base Styles
-* Fonts
-* Metrics
-* Colors
-
-etc.
+This directory contains the base for the application styles.

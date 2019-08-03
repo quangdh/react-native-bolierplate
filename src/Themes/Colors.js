@@ -1,4 +1,12 @@
-const colors = {
+
+/**
+ * This file contains the application's colors.
+ *
+ * Define color here instead of duplicating them throughout the components.
+ * That allows to change them more easily later on.
+ */
+
+export default {
   background: '#1F0808',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',
@@ -21,7 +29,8 @@ const colors = {
   eggplant: '#251a34',
   border: '#483F53',
   banner: '#5F3E63',
-  text: '#E0D7E5'
+  text: '#212529',
+  primary: '#007bff',
+  success: '#28a745',
+  error: '#dc3545',
 }
-
-export default colors

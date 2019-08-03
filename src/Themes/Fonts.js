@@ -1,3 +1,5 @@
+import { moderateScale } from "react-native-size-matters";
+
 const type = {
   base: 'Avenir-Book',
   bold: 'Avenir-Black',
@@ -5,17 +7,17 @@ const type = {
 }
 
 const size = {
-  h1: 38,
-  h2: 34,
-  h3: 30,
-  h4: 26,
-  h5: 20,
-  h6: 19,
-  input: 18,
-  regular: 17,
-  medium: 14,
-  small: 12,
-  tiny: 8.5
+  h1: moderateScale(38),
+  h2: moderateScale(34),
+  h3: moderateScale(30),
+  h4: moderateScale(26),
+  h5: moderateScale(20),
+  h6: moderateScale(19),
+  input: moderateScale(18),
+  regular: moderateScale(17),
+  medium: moderateScale(14),
+  small: moderateScale(12),
+  tiny: moderateScale(8.5)
 }
 
 const style = {
